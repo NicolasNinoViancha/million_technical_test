@@ -11,7 +11,9 @@
     "test": "jest",
     "xcode": "xed ios",
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "generate-pr-template": "node ./scripts/generate-pr-template.js",
+    "verify-branch-name": "node ./scripts/verify-branch-name.js"
   },
   "dependencies": {
     "react": "19.0.0",
