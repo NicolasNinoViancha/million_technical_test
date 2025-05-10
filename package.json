@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "install-proyect": "yarn && cd ios && pod install && cd ..",
-    "android": "react-native run-android --active-arch-only",
-    "ios": "react-native run-ios --simulator=\"iPhone 16 Pro\"",
-    "lint": "eslint .",
     "start": "react-native start --reset-cache",
+    "android:development": "npx react-native run-android --mode=developmentdebug --appIdSuffix=development --active-arch-only",
+    "android:production": "npx react-native run-android --mode=productiondebug --active-arch-only",
+    "android:development-release": "npx react-native run-android --mode=developmentrelease --appIdSuffix=development --active-arch-only",
+    "android:production-release": "npx react-native run-android --mode=productionrelease --active-arch-only",
+    "ios:development": "react-native run-ios --simulator=\"iPhone 16 Pro\" --scheme \"million_technical_testDev\" ",
+    "ios:production": "react-native run-ios --simulator=\"iPhone 16 Pro\" --scheme \"million_technical_test\" ",
+    "lint": "eslint .",
     "test": "jest",
     "xcode": "xed ios",
     "prepare": "husky",
@@ -17,7 +21,8 @@
   },
   "dependencies": {
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-native": "0.79.2",
+    "react-native-config": "^1.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
