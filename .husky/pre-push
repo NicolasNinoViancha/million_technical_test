@@ -17,6 +17,7 @@ echo ""
 printf '\033[32m=%.0s\033[0m' {1..50}
 echo "\033[32m\n                🧪 Run Test\033[0m"
 printf '\033[32m=%.0s\033[0m' {1..50}
+echo ""
 yarn test
 echo ""
 printf '\033[32m=%.0s\033[0m' {1..50}
