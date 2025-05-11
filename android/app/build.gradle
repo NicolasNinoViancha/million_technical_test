@@ -1,11 +1,29 @@
 apply plugin: "com.android.application"
+/**
+ * react-native-config
+ * map .env with productFlavors
+*/
 project.ext.envConfigFiles = [
     development: ".env.development",
     production: ".env.production",
 ]
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+/**
+ * finish config
+*/
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+/**
+ * react-native-vector-icons
+ * map .env with productFlavors
+*/
+project.ext.vectoricons = [
+    iconFontNames: [ 'FontAwesome.ttf'] // Specify font files
+]
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+/**
+ * finish config
+*/
 
 /**
  * This is the configuration block to customize your React Native Android app.
