@@ -9,10 +9,17 @@ const HomePresenter = ({navigation}: HomeScreenModels.PropsPresenter) => {
     isLoadingMoreGetCryptoList,
     isErrorGetCryptoList,
     cryptoList,
+    getCryptoList,
     getMoreCryptoList,
   } = useGetCryptoList();
   return (
     <HomeComponent
+      isLoading={isLoadingGetCryptoList}
+      isLoadingMore={isLoadingMoreGetCryptoList}
+      isError={isErrorGetCryptoList}
+      data={cryptoList}
+      onFetchMore={getMoreCryptoList}
+      onFetch={getCryptoList}
       onShowDetails={cryptoID =>
         navigation.navigate(NavigationModels.MAIN_ROUTES_NAMES.DETAILS, {
           cryptoID,
