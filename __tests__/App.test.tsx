@@ -11,6 +11,10 @@ jest.mock('@home/presenter/di', () => ({
     getCryptoList: jest.fn().mockResolvedValue([]),
   },
 }));
+jest.mock(
+  '@home/presenter/screens/home/Home.component.tsx',
+  () => 'HomeComponent',
+);
 
 test('renders correctly', async () => {
   await ReactTestRenderer.act(async () => {
