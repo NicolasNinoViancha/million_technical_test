@@ -7,7 +7,7 @@ const useGetCryptoDetails = (cryptoID: string) => {
   const [cryptoDetails, setCryptDetails] = useState<
     CryptoDetailsEntity | undefined
   >(undefined);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
   useEffect(() => {
     if (cryptoID) {
