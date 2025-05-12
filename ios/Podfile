@@ -14,7 +14,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'million_technical_test' do
+abstract_target 'million_technical_testCommonPods' do
   config = use_native_modules!
 
   use_react_native!(
@@ -32,4 +32,11 @@ target 'million_technical_test' do
       # :ccache_enabled => true
     )
   end
+
+  target 'million_technical_test' do
+  end
+
+  target 'million_technical_testDev' do
+  end
+
 end

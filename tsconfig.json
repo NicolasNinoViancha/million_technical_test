@@ -1,3 +1,15 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "typeRoots": ["node_modules/@types", "./types"],
+    "baseUrl": "./",
+    "paths": {
+      "@home/*": ["src/home/*"],
+      "@details/*": ["src/details/*"],
+      "@shared/*": ["src/shared/*"],
+      "@assets/*": ["src/assets/*"],
+      "@core/*": ["src/core/*"]
+    }
+  }
 }
