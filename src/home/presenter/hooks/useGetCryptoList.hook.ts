@@ -19,6 +19,7 @@ const useGetCryptoList = () => {
     setIsLoading(true);
     setIsError(false);
     setAreAllItems(false);
+    setCryptoList([]);
     try {
       const response = await injections.homeUseCases.getCryptoList(
         MINIMUM_POSITION,
@@ -39,7 +40,7 @@ const useGetCryptoList = () => {
   };
 
   const getMoreCryptoList = async () => {
-    if (areAllItems) {
+    if (areAllItems || isLoadingMore || isLoading) {
       return;
     }
     setIsError(false);
@@ -49,6 +50,10 @@ const useGetCryptoList = () => {
       const response = await injections.homeUseCases.getCryptoList(
         newStartItem,
       );
+      if (response.length === 0) {
+        setAreAllItems(true);
+        return;
+      }
       setCryptoList(prev => [...prev, ...response]);
     } catch (error: any) {
       setIsError(true);
@@ -65,6 +70,7 @@ const useGetCryptoList = () => {
     isLoadingMoreGetCryptoList: isLoadingMore,
     isErrorGetCryptoList: isError,
     cryptoList,
+    getCryptoList,
     getMoreCryptoList,
   };
 };
