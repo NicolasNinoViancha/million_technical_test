@@ -18,7 +18,8 @@ https://www.coinlore.com/cryptocurrency-data-api
 - [Architecture](#architecture)
   - [Layers](#layers)
   - [Special Directories](#special-directories)
-- []
+- [Prototyping](#prototyping)
+  - [Final Sketch](#final-sketch)
 - [Key Highlights](#keyhighlights)
 - [Areas for Improvement](#areasforimprovement)
 - [Developer Contact](#-developer-contact)
