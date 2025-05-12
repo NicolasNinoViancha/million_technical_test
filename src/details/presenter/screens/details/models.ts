@@ -1,4 +1,5 @@
 import {NavigationModels} from '@shared/navigation/models';
+import {CryptoDetailsEntity} from '@details/domain/entities';
 
 export namespace DetailsScreenModels {
   export type PropsPresenter =
@@ -6,7 +7,9 @@ export namespace DetailsScreenModels {
 
   export type PropsComponent = {
     testID?: string;
-    cryptoID?: string;
+    details?: CryptoDetailsEntity;
+    isLoading?: boolean;
+    isError?: boolean;
     onGoBack: () => void;
   };
 }
